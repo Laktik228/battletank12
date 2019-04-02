@@ -20,6 +20,10 @@ public:
 	void Initialise(UTankTrack* RightTrack, UTankTrack* LeftTrack);
 	UFUNCTION(BlueprintCallable)
 	void IntendMoveForward(float Throw);
+	UFUNCTION(BlueprintCallable)
+	void IntendMoveRight(float Throw);
+	UFUNCTION(BlueprintCallable)
+	void IntendMoveLeft(float Throw);
 
 private:
 	UTankTrack* RightTrack = nullptr;
