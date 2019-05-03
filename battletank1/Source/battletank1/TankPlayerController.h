@@ -17,9 +17,6 @@ class BATTLETANK1_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 
 protected:
-	UFUNCTION(BlueprintCallable)
-	ATank* GetControlledTank() const;
-	
 	UFUNCTION(BlueprintImplementableEvent)
 	void FoundAimingComponentByClass(UTankAimingComponent* AimingComponent);
 private:
