@@ -1,8 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 #include "Tank.h"
-#include "TankBarrel.h"
-#include "Projectile.h"
 #include "battletank1.h"
 
 
@@ -27,15 +25,4 @@ void ATank::BeginPlay()
 
 
 
-void ATank::Fire()
-{
-	bool isReloaded = (FPlatformTime::Seconds() - LastTimeShot) > ReloadTime;
-
-	if (Barrel && isReloaded) {
-
-		auto Projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileBlueprint, Barrel->GetSocketLocation(FName("Projectile")), Barrel->GetSocketRotation(FName("Projectile")));
-		Projectile->LaunchProjectile(LaunchSpeed);
-		LastTimeShot = FPlatformTime::Seconds();
-	}
-}
 

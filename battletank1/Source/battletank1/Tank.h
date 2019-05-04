@@ -18,8 +18,7 @@ class BATTLETANK1_API ATank : public APawn
 	GENERATED_BODY()
 
 public:
-	UFUNCTION(BlueprintCallable, Category = Firing)
-	void Fire();
+
 
 protected:
 
@@ -32,14 +31,6 @@ private:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
-		float LaunchSpeed = 4000;
+	float LaunchSpeed = 4000;
 
-	UPROPERTY(EditAnywhere, Category = Setup)
-		TSubclassOf<AProjectile> ProjectileBlueprint;
-
-	// Local reference
-	UTankBarrel* Barrel = nullptr;
-
-	float ReloadTime = 3;
-	double LastTimeShot = 0;
 };
