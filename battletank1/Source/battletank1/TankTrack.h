@@ -20,6 +20,8 @@ public:
 	
 	UPROPERTY(EditDefaultsOnly)
 		float MaxDrivingForce = 400000;
+
+	
 private:
 	virtual void BeginPlay() override;
 
@@ -27,5 +29,8 @@ private:
 	void OnHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit);
 
 	UTankTrack();
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction) override;
+	void ApplySideWaysForce();
+
+	void DriveTrack();
+	float CurrentThrottle = 0;
 };
